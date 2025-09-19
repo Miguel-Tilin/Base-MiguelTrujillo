@@ -1,10 +1,10 @@
 from clases.avanzadas import OperacionesAvanzadas
 
 def menu():
-    print("\n=== Calculadora Avanzada Xd")
+    print("\n=== Calculadora Avanzada ===")
     print("1) Potencia (base ^ exponente)")
+    print("2) Raíz cuadrada")
     print("0) Salir")
-
 
 def leer_float(msg):
     while True:
@@ -13,7 +13,6 @@ def leer_float(msg):
         except Exception:
             print("Entrada inválida. Intenta de nuevo.")
 
-
 def main():
     calc = OperacionesAvanzadas()
 
@@ -21,11 +20,15 @@ def main():
         menu()
         opcion = input("Elige una opción: ").strip()
 
-
         if opcion == "1":
             base = leer_float("Base: ")
             exponente = leer_float("Exponente: ")
             resultado = calc.potencia(base, exponente)  
+            print(f"Resultado: {resultado}")
+
+        elif opcion == "2":
+            numero = leer_float("Número: ")
+            resultado = calc.raiz_cuadrada(numero)  
             print(f"Resultado: {resultado}")
 
         elif opcion == "0":
